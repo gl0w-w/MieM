@@ -1,26 +1,26 @@
 ion-toolbar {
-    position: relative;
+  position: relative;
 }
 
 .custom-title {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    bottom: 16px;
-    text-align: center;
-    pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 16px;
+  text-align: center;
+  pointer-events: none;
 }
 
 ion-back-button {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .button-container {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 .Registrarse-btn {
-    width: 60%;
+  width: 100%;
 }

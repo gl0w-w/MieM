@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
@@ -9,7 +14,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./registro.page.scss'],
 })
 export class RegistroPage implements OnInit {
-
   formularioRegistro: FormGroup;
 
   constructor(
@@ -18,13 +22,30 @@ export class RegistroPage implements OnInit {
     private router: Router
   ) {
     this.formularioRegistro = this.fb.group({
-      "nombre": new FormControl("", Validators.required),
-      "password": new FormControl("", Validators.required),
-      "confirmacionPassword": new FormControl("", Validators.required)
+      nombre: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(8),
+      ]),
+      password: new FormControl('', [
+        Validators.required,
+        this.passwordValidator,
+      ]),
+      confirmacionPassword: new FormControl('', Validators.required),
     });
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  passwordValidator(control: FormControl): { [key: string]: boolean } | null {
+    const value = control.value;
+    if (!/[A-Z]/.test(value)) {
+      return { uppercase: true };
+    }
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
+      return { specialChar: true };
+    }
+    return null;
   }
 
   async guardar() {
@@ -33,27 +54,29 @@ export class RegistroPage implements OnInit {
       const alert = await this.alertController.create({
         header: 'Error',
         message: 'Por favor, complete todos los campos requeridos.',
-        buttons: ['OK']
+        buttons: ['OK'],
       });
 
       await alert.present();
     } else {
       var usuario = {
         nombre: f.nombre,
-        password: f.password
-      }
-      
-      localStorage.setItem("usuario", JSON.stringify(usuario));
+        password: f.password,
+      };
+
+      localStorage.setItem('usuario', JSON.stringify(usuario));
 
       const alert = await this.alertController.create({
         header: 'Éxito',
         message: 'Registrado con éxito',
-        buttons: [{
-          text: 'OK',
-          handler: () => {
-            this.router.navigate(['/login']);
-          }
-        }]
+        buttons: [
+          {
+            text: 'OK',
+            handler: () => {
+              this.router.navigate(['/login']);
+            },
+          },
+        ],
       });
 
       await alert.present();
