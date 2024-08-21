@@ -1,22 +1,22 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="dark">
+  <ion-toolbar>
     <ion-title style="text-align: center">MïeM</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <br><br>
-  <ion-card>
-    <ion-card-header>
+  <ion-card color="#ffffff" class="ion-card-wrapper">
+    <ion-card-header color="#ffffff">
       <ion-card-title style="text-align: center">Login</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <form [formGroup]="formularioLogin">
-        <ion-item>
+        <ion-item color="#ffffff" class="ion-card-wrapper">
           <ion-label position="floating">Nombre</ion-label>
           <ion-input formControlName="nombre"></ion-input>
         </ion-item>
-        <ion-item>
+        <ion-item color="#ffffff" class="ion-card-wrapper">
           <ion-label position="floating">Contraseña</ion-label>
           <ion-input formControlName="password" type="password"></ion-input>
         </ion-item>
@@ -38,5 +38,6 @@
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar color="dark"></ion-toolbar>
+  <ion-toolbar ></ion-toolbar>
 </ion-footer>
+

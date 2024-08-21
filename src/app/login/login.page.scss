@@ -1,3 +1,16 @@
+ion-app,
+ion-content {
+  --ion-background-color: #ffffff ; 
+  --ion-text-color: #000000 ; 
+}
+
+ion-header,
+ion-footer {
+  --ion-background-color: #000000; 
+  --ion-text-color: #ffffff; 
+}
+
+
 .button-container {
   display: flex;
   justify-content: flex-end;
@@ -5,6 +18,7 @@
 
 .ingresar-btn {
   width: 100%;
+  color: #ffffff;
 }
 
 .registrar-container {
@@ -26,3 +40,4 @@
   font-weight: bold;
   text-transform: none;
 }
+
