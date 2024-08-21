@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="custom-title">MIEM</ion-title>
+  </ion-toolbar>
+</ion-header>
+<br><br>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="text-align: center">Registro</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="formularioRegistro">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input formControlName="nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Confirmar contraseña</ion-label>
+          <ion-input formControlName="confirmacionPassword" type="password"></ion-input>
+        </ion-item>
+      </form>
+      <br>
+      <div class="button-container">
+        <ion-button class="Registrarse-btn" (click)="guardar()">
+          Registrarse
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+
+<ion-footer>
+  <ion-toolbar color="dark"></ion-toolbar>
+</ion-footer>

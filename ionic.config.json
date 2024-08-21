@@ -1,0 +1,7 @@
+{
+  "name": "Miem",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
