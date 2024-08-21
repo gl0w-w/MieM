@@ -1,3 +1,15 @@
 ion-fab-button {
   color: black;
 }
+
+ion-app,
+ion-content {
+  --ion-background-color: #ffffff ; 
+  --ion-text-color: #000000 ; 
+}
+
+ion-header,
+ion-footer {
+  --ion-background-color: #000000; 
+  --ion-text-color: #ffffff; 
+}
