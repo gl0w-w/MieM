@@ -4,8 +4,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'index',
     pathMatch: 'full'
+  },
+  {
+    path: 'index',
+    loadChildren: () => import('./index/index.module').then(m => m.IndexPageModule)
   },
   {
     path: 'login',

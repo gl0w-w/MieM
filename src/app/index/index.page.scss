@@ -1,0 +1,74 @@
+:root {
+    --color-primary: #B3E5FC;
+    --color-secondary: #FFABAB;
+    --color-tertiary: #A8D5BA;
+    --color-accent: #F9E4A8;
+    --color-neutral: #D0D0D0;
+    --color-text: #333333;
+  }
+
+ion-content {
+    --background: #B3E5FC;
+  }
+  
+  .about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .about-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  .logo {
+    width: 250px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    color: #333333;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .start-button {
+    --background: #FFABAB;
+    --color: #FFFFFF;
+    --border-radius: 5px;
+    --box-shadow: none;
+    margin-top: 20px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .register-prompt {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333333;
+  }
+  
+  .register-prompt a {
+    color: #FFABAB;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
