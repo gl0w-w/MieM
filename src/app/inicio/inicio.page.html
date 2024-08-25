@@ -1,21 +1,38 @@
-<ion-header id="header">
-  <ion-toolbar>
-    <ion-title>Header</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item button>
+        <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+        <ion-label>Perfil</ion-label>
+      </ion-item>
+      <ion-item button>
+        <ion-icon name="briefcase-outline" slot="start"></ion-icon>
+        <ion-label>¿Tienes un emprendimiento?</ion-label>
+      </ion-item>
+    </ion-list>
+    <div class="user-info">
+      <ion-icon name="person-outline"></ion-icon>
+      <span>Cuenta: {{ nombreUsuario }}</span>
+    </div>
+  </ion-content>
+</ion-menu>
 
-<ion-content>
-  <ion-fab slot="fixed" vertical="top" horizontal="end" [edge]="true">
-    <ion-fab-button>
-      <ion-icon name="chevron-down-circle"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="bottom">
-      <ion-fab-button>
-        <ion-icon name="people-circle"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button>
-        <ion-icon name="person-circle"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
-</ion-content>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>MïeM</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <h1>Bienvenido a MïeM</h1>
+    <p>Explora nuestras opciones en el menú.</p>
+  </ion-content>
+</div>

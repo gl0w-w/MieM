@@ -42,6 +42,7 @@ export class LoginPage implements OnInit {
 
       if (usuario.nombre == f.nombre && usuario.password == f.password) {
         console.log("Ingresado");
+        localStorage.setItem('usuario', JSON.stringify(usuario)); // Guarda los datos del usuario
         this.router.navigate(['/inicio']);
       } else {
         this.loginError = 'Usuario o contraseña incorrectos';
