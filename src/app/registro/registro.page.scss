@@ -86,3 +86,17 @@ ion-button {
   margin-left: 5px;
 }
 
+.error-message {
+  color: #FFABAB;
+  font-size: 13px;
+  margin-top: 5px;
+  transition: all 0.3s ease;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+ion-input.ng-invalid.ng-touched {
+  border-bottom: 1px solid #ff0000;
+}

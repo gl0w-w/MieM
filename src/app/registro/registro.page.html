@@ -7,16 +7,25 @@
         <div class="input-group">
           <ion-label>Nombre</ion-label>
           <ion-input formControlName="nombre" type="text"></ion-input>
+          <div class="error-message" *ngIf="formularioRegistro.get('nombre')?.invalid && (formularioRegistro.get('nombre')?.dirty || formularioRegistro.get('nombre')?.touched)">
+            {{ getErrorMessage('nombre') }}
+          </div>
         </div>
         <div class="input-group">
           <ion-label>Contraseña</ion-label>
           <ion-input formControlName="password" type="password"></ion-input>
+          <div class="error-message" *ngIf="formularioRegistro.get('password')?.invalid && (formularioRegistro.get('password')?.dirty || formularioRegistro.get('password')?.touched)">
+            {{ getErrorMessage('password') }}
+          </div>
         </div>
         <div class="input-group">
           <ion-label>Confirmar contraseña</ion-label>
           <ion-input formControlName="confirmacionPassword" type="password"></ion-input>
+          <div class="error-message" *ngIf="formularioRegistro.hasError('mismatch') && (formularioRegistro.get('confirmacionPassword')?.dirty || formularioRegistro.get('confirmacionPassword')?.touched)">
+            Las contraseñas no coinciden
+          </div>
         </div>
-        <ion-button expand="block" (click)="guardar()">REGISTRARSE</ion-button>
+        <ion-button expand="block" (click)="guardar()" [disabled]="formularioRegistro.invalid">REGISTRARSE</ion-button>
       </form>
       <div class="login-prompt">
         <span>¿Ya tienes cuenta?</span>

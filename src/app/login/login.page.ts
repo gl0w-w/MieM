@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,10 +10,10 @@ import { Router } from '@angular/router';
 export class LoginPage implements OnInit {
 
   formularioLogin: FormGroup;
+  loginError: string = '';
 
   constructor(
     public fb: FormBuilder,
-    private alertController: AlertController,
     private router: Router
   ) {
     this.formularioLogin = this.fb.group({
@@ -26,29 +25,27 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  async ingresar() {
-    var f = this.formularioLogin.value;
+  getErrorMessage(field: string): string {
+    const control = this.formularioLogin.get(field);
+    if (control?.errors) {
+      if (control.errors['required']) {
+        return `El ${field} es requerido`;
+      }
+    }
+    return '';
+  }
 
-    var usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
-
+  ingresar() {
     if (this.formularioLogin.valid) {
+      var f = this.formularioLogin.value;
+      var usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
+
       if (usuario.nombre == f.nombre && usuario.password == f.password) {
         console.log("Ingresado");
         this.router.navigate(['/inicio']);
       } else {
-        await this.mostrarAlerta('Error', 'Usuario o contraseña incorrectos.');
+        this.loginError = 'Usuario o contraseña incorrectos';
       }
-    } else {
-      await this.mostrarAlerta('Error', 'Por favor, complete todos los campos requeridos.');
     }
-  }
-
-  async mostrarAlerta(header: string, message: string) {
-    const alert = await this.alertController.create({
-      header: header,
-      message: message,
-      buttons: ['OK']
-    });
-    await alert.present();
   }
 }

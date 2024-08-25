@@ -1,5 +1,3 @@
-
-
 <ion-content class="ion-padding">
   <div class="login-container">
     <div class="login-card">
@@ -9,12 +7,21 @@
         <div class="input-group">
           <ion-label>Nombre</ion-label>
           <ion-input formControlName="nombre" type="text"></ion-input>
+          <div class="error-message" *ngIf="formularioLogin.get('nombre')?.invalid && (formularioLogin.get('nombre')?.dirty || formularioLogin.get('nombre')?.touched)">
+            {{ getErrorMessage('nombre') }}
+          </div>
         </div>
         <div class="input-group">
           <ion-label>Contraseña</ion-label>
           <ion-input formControlName="password" type="password"></ion-input>
+          <div class="error-message" *ngIf="formularioLogin.get('password')?.invalid && (formularioLogin.get('password')?.dirty || formularioLogin.get('password')?.touched)">
+            {{ getErrorMessage('password') }}
+          </div>
         </div>
-        <ion-button expand="block" (click)="ingresar()">INGRESAR</ion-button>
+        <div class="error-message" *ngIf="loginError">
+          {{ loginError }}
+        </div>
+        <ion-button expand="block" (click)="ingresar()" [disabled]="formularioLogin.invalid">INGRESAR</ion-button>
       </form>
       <div class="register-prompt">
         <span>¿No tienes cuenta?</span>
@@ -23,4 +30,3 @@
     </div>
   </div>
 </ion-content>
-

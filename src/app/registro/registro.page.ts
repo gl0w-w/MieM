@@ -5,7 +5,6 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,21 +17,20 @@ export class RegistroPage implements OnInit {
 
   constructor(
     public fb: FormBuilder,
-    private alertController: AlertController,
     private router: Router
   ) {
     this.formularioRegistro = this.fb.group({
       nombre: new FormControl('', [
         Validators.required,
         Validators.minLength(4),
-        Validators.maxLength(8),
+        Validators.maxLength(20),
       ]),
       password: new FormControl('', [
         Validators.required,
         this.passwordValidator,
       ]),
       confirmacionPassword: new FormControl('', Validators.required),
-    });
+    }, { validator: this.passwordMatchValidator });
   }
 
   ngOnInit() {}
@@ -48,38 +46,44 @@ export class RegistroPage implements OnInit {
     return null;
   }
 
-  async guardar() {
-    var f = this.formularioRegistro.value;
-    if (this.formularioRegistro.invalid) {
-      const alert = await this.alertController.create({
-        header: 'Error',
-        message: 'Por favor, complete todos los campos requeridos.',
-        buttons: ['OK'],
-      });
+  passwordMatchValidator(g: FormGroup) {
+    const password = g.get('password')?.value;
+    const confirmPassword = g.get('confirmacionPassword')?.value;
+    return password === confirmPassword ? null : {'mismatch': true};
+  }
 
-      await alert.present();
-    } else {
+  getErrorMessage(field: string): string {
+    const control = this.formularioRegistro.get(field);
+    if (control?.errors) {
+      if (control.errors['required']) {
+        return `El ${field} es requerido`;
+      }
+      if (control.errors['minlength']) {
+        return `El ${field} debe tener al menos ${control.errors['minlength'].requiredLength} caracteres`;
+      }
+      if (control.errors['maxlength']) {
+        return `El ${field} no puede tener más de ${control.errors['maxlength'].requiredLength} caracteres`;
+      }
+      if (control.errors['uppercase']) {
+        return "La contraseña debe contener al menos una mayúscula";
+      }
+      if (control.errors['specialChar']) {
+        return "La contraseña debe contener al menos un carácter especial";
+      }
+    }
+    return '';
+  }
+
+  guardar() {
+    if (this.formularioRegistro.valid) {
+      var f = this.formularioRegistro.value;
       var usuario = {
         nombre: f.nombre,
         password: f.password,
       };
 
       localStorage.setItem('usuario', JSON.stringify(usuario));
-
-      const alert = await this.alertController.create({
-        header: 'Éxito',
-        message: 'Registrado con éxito',
-        buttons: [
-          {
-            text: 'OK',
-            handler: () => {
-              this.router.navigate(['/login']);
-            },
-          },
-        ],
-      });
-
-      await alert.present();
+      this.router.navigate(['/login']);
     }
   }
 }
