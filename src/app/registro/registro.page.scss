@@ -1,40 +1,88 @@
-ion-toolbar {
-  position: relative;
+:root {
+  --color-primary: #B3E5FC;    /* Celeste Pastel */
+  --color-secondary: #FFABAB;  /* Coral Pastel */
+  --color-tertiary: #A8D5BA;   /* Verde Menta Pastel */
+  --color-accent: #F9E4A8;     /* Amarillo Suave */
+  --color-neutral: #D0D0D0;    /* Gris Claro */
+  --color-text: #333333;       /* Texto oscuro para contraste */
 }
 
-ion-app,
 ion-content {
-  --ion-background-color: #ffffff ; 
-  --ion-text-color: #000000 ; 
+  --background: #B3E5FC;
 }
 
-ion-header,
-ion-footer {
-  --ion-background-color: #000000; 
-  --ion-text-color: #ffffff; 
-}
-
-
-.custom-title {
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: 100%;
-  bottom: 16px;
-  text-align: center;
-  pointer-events: none;
-}
-
-ion-back-button {
-  position: relative;
-  z-index: 1;
-}
-
-.button-container {
+.register-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
-.Registrarse-btn {
-  width: 100%;
-  color: #ffffff
+
+.register-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 350px;
 }
+
+.app-title {
+  font-size: 2rem;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.register-subtitle {
+  font-size: 1.2rem;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+ion-label {
+  color: #333333;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+}
+
+ion-input {
+  --background: transparent;
+  --color: #333333;
+  --padding-start: 0;
+  --padding-end: 0;
+  border-bottom: 1px solid #D0D0D0;
+  margin-bottom: 5px;
+}
+
+ion-button {
+  --background: #FFABAB;
+  --color: #FFFFFF;
+  --border-radius: 5px;
+  --box-shadow: none;
+  margin-top: 20px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.login-prompt {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333333;
+}
+
+.login-prompt a {
+  color: #FFABAB;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 5px;
+}
+

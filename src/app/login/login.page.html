@@ -1,43 +1,26 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title style="text-align: center">MïeM</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
-  <br><br>
-  <ion-card color="#ffffff" class="ion-card-wrapper">
-    <ion-card-header color="#ffffff">
-      <ion-card-title style="text-align: center">Login</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
+
+<ion-content class="ion-padding">
+  <div class="login-container">
+    <div class="login-card">
+      <h1 class="app-title">MïeM</h1>
+      <h2 class="login-subtitle">Bienvenido de vuelta</h2>
       <form [formGroup]="formularioLogin">
-        <ion-item color="#ffffff" class="ion-card-wrapper">
-          <ion-label position="floating">Nombre</ion-label>
-          <ion-input formControlName="nombre"></ion-input>
-        </ion-item>
-        <ion-item color="#ffffff" class="ion-card-wrapper">
-          <ion-label position="floating">Contraseña</ion-label>
+        <div class="input-group">
+          <ion-label>Nombre</ion-label>
+          <ion-input formControlName="nombre" type="text"></ion-input>
+        </div>
+        <div class="input-group">
+          <ion-label>Contraseña</ion-label>
           <ion-input formControlName="password" type="password"></ion-input>
-        </ion-item>
+        </div>
+        <ion-button expand="block" (click)="ingresar()">INGRESAR</ion-button>
       </form>
-      <br>
-      <div class="button-container">
-        <ion-button class="ingresar-btn" (click)="ingresar()">
-          Ingresar
-        </ion-button>
+      <div class="register-prompt">
+        <span>¿No tienes cuenta?</span>
+        <a [routerLink]="['/registro']">Registrate</a>
       </div>
-    </ion-card-content>
-  </ion-card>
-  <div class="registrar-container">
-    <span class="registrar-text">No posees cuenta? </span>
-    <ion-button class="registrar-btn" fill="clear" [routerLink]="['/registro']">
-      Registrate
-    </ion-button>
+    </div>
   </div>
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar ></ion-toolbar>
-</ion-footer>
 
