@@ -15,6 +15,17 @@
         <ion-label>¿Tienes un emprendimiento?</ion-label>
       </ion-item>
     </ion-list>
+    
+    <div class="menu-footer">
+      <ion-button class="menu-button" (click)="limpiarEmprendimientos()">
+        <ion-icon name="trash" slot="start"></ion-icon>
+        Limpiar
+      </ion-button>
+      <ion-button class="menu-button" (click)="cerrarSesion()">
+        <ion-icon name="log-out" slot="start"></ion-icon>
+        Cerrar Sesión
+      </ion-button>
+    </div>
   </ion-content>
 </ion-menu>
 
@@ -29,6 +40,28 @@
   </ion-header>
   <ion-content class="ion-padding">
     <h1>Bienvenido a MïeM</h1>
-    <p>Explora nuestras opciones en el menú.</p>
+    <p>Explora nuestros emprendimientos.</p>
+    <ion-button expand="block" (click)="cargarEmprendimientos()">ACTUALIZAR</ion-button>
+
+    <div *ngIf="emprendimientos.length === 0" class="empty-state">
+      <p>No hay emprendimientos guardados.</p>
+    </div>
+
+    <ion-grid *ngIf="emprendimientos.length > 0">
+      <ion-row>
+        <ion-col size="12" size-md="6" *ngFor="let emprendimiento of emprendimientos">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>{{ emprendimiento.nombre }}</ion-card-title>
+              <ion-card-subtitle>{{ emprendimiento.tipo }}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <p><strong>Dirección:</strong> {{ emprendimiento.direccion }}</p>
+              <p><strong>Creado por:</strong> {{ emprendimiento.creador }}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-content>
 </div>

@@ -14,7 +14,7 @@ ion-menu {
 
 ion-toolbar {
   --background: #6482AD;
-  --color: #333333;
+  --color: #ffffff;
 }
 
 ion-content {
@@ -24,7 +24,6 @@ ion-content {
 
 ion-list {
   background: transparent;
-  
 }
 
 ion-item {
@@ -43,9 +42,8 @@ ion-item ion-icon {
   color: #7FA1C3;
 }
 
-ion-menu-button{
+ion-menu-button {
   color: #ffffff;
-
 }
 
 h1 {
@@ -73,4 +71,82 @@ p {
   height: auto;
   margin-left: 10px; 
   display: block; 
+}
+
+ion-card {
+  background-color: #e8e1e1;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+ion-card-title {
+  font-size: 1.2rem;
+  color: #333333;
+}
+
+ion-card-subtitle {
+  font-size: 1rem;
+  color: #333333;
+}
+
+ion-card-content {
+  font-size: 0.9rem;
+  color: #333333;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 20px;
+  color: #333333;
+  font-style: italic;
+}
+
+ion-button {
+  --background: #7FA1C3;
+  --color: #F5EDED;
+  --border-radius: 5px;
+  --box-shadow: none;
+  margin-top: 20px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.menu-button {
+  --background: #7FA1C3;
+  --color: #F5EDED;
+  --border-radius: 5px;
+  --box-shadow: none;
+  margin-top: 20px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 87%; 
+}
+
+
+.menu-button ion-icon {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+ion-menu ion-content {
+  --background: #F5EDED;
+}
+
+ion-menu ion-item {
+  --background: transparent;
+  --color: #333333;
+  --border-color: rgba(0, 0, 0, 0.1);
+}
+
+ion-menu ion-icon {
+  color: #7FA1C3;
+}
+
+.menu-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
 }

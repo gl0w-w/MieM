@@ -1,8 +1,30 @@
 <ion-header>
     <ion-toolbar>
-        <img src="../../assets/img/miemlogo.png" alt="" class="toolbar-logo">
+      <img src="../../assets/img/miemlogo.png" alt="" class="toolbar-logo">
     </ion-toolbar>    
-</ion-header>
-<ion-content>
-
-</ion-content>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <form (ngSubmit)="guardarEmprendimiento()">
+      <ion-item>
+        <ion-label position="floating">Nombre del emprendimiento</ion-label>
+        <ion-input [(ngModel)]="emprendimiento.nombre" name="nombre" required></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Tipo de emprendimiento</ion-label>
+        <ion-select [(ngModel)]="emprendimiento.tipo" name="tipo" required>
+          <ion-select-option value="barberia">Barbería</ion-select-option>
+          <ion-select-option value="restaurante">Restaurante</ion-select-option>
+          <ion-select-option value="bazar">Bazar</ion-select-option>
+          <!-- Puedes agregar más opciones aquí -->
+        </ion-select>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Dirección</ion-label>
+        <ion-input [(ngModel)]="emprendimiento.direccion" name="direccion" required></ion-input>
+      </ion-item>
+      
+      <ion-button expand="block" type="submit" [disabled]="!formularioValido()">Guardar</ion-button>
+    </form>
+  </ion-content>
