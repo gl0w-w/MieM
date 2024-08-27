@@ -8,6 +8,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'empr',
+    loadChildren: () => import('./empr/empr.module').then(m => m.emprPageModule)
+  },
+  {
     path: 'index',
     loadChildren: () => import('./index/index.module').then(m => m.IndexPageModule)
   },

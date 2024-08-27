@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 
 
@@ -17,5 +18,10 @@ export class InicioPage implements OnInit {
   ngOnInit() {
     const usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
     this.nombreUsuario = usuario.nombre || 'Desconocido'; 
+  }
+  constructor(private menuCtrl: MenuController) {}
+
+  async closeMenu() {
+    await this.menuCtrl.close();
   }
 }
