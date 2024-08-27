@@ -8,7 +8,7 @@
   }
 
 ion-content {
-    --background: #B3E5FC;
+    --background: #6482AD;
   }
   
   .about-container {
@@ -19,7 +19,7 @@ ion-content {
   }
   
   .about-card {
-    background: #ffffff;
+    background: #F5EDED;
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -32,13 +32,7 @@ ion-content {
     width: 250px;
     margin-bottom: 20px;
   }
-  
-  h1 {
-    font-size: 2rem;
-    color: #333333;
-    margin-bottom: 20px;
-  }
-  
+
   p {
     color: #333333;
     font-size: 1rem;
@@ -47,8 +41,8 @@ ion-content {
   }
   
   .start-button {
-    --background: #FFABAB;
-    --color: #FFFFFF;
+    --background: #7FA1C3;
+    --color: #F5EDED;
     --border-radius: 5px;
     --box-shadow: none;
     margin-top: 20px;
@@ -65,7 +59,7 @@ ion-content {
   }
   
   .register-prompt a {
-    color: #FFABAB;
+    color: #7FA1C3;
     text-decoration: none;
     font-weight: 600;
     margin-left: 5px;

@@ -8,7 +8,7 @@
 }
 
 ion-content {
-  --background: #B3E5FC;
+  --background: #6482AD;
 }
 
 .register-container {
@@ -19,7 +19,7 @@ ion-content {
 }
 
 .register-card {
-  background: #ffffff;
+  background: #F5EDED;
   border-radius: 20px;
   padding: 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -62,8 +62,8 @@ ion-input {
 }
 
 ion-button {
-  --background: #FFABAB;
-  --color: #FFFFFF;
+  --background: #7FA1C3;
+  --color: #F5EDED;
   --border-radius: 5px;
   --box-shadow: none;
   margin-top: 20px;
@@ -80,14 +80,14 @@ ion-button {
 }
 
 .login-prompt a {
-  color: #FFABAB;
+  color: #7FA1C3;
   text-decoration: none;
   font-weight: 600;
   margin-left: 5px;
 }
 
 .error-message {
-  color: #FFABAB;
+  color: #ff0000;
   font-size: 13px;
   margin-top: 5px;
   transition: all 0.3s ease;
