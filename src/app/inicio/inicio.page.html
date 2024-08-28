@@ -52,12 +52,14 @@
         <ion-col size="12" size-md="6" *ngFor="let emprendimiento of emprendimientos">
           <ion-card>
             <ion-card-header>
-              <ion-card-title>{{ emprendimiento.nombre }}</ion-card-title>
+              <div class="card-header-content">
+                <ion-card-title>{{ emprendimiento.nombre }}</ion-card-title>
+                <span class="creator-name">{{ emprendimiento.creador }}</span>
+              </div>
               <ion-card-subtitle>{{ emprendimiento.tipo }}</ion-card-subtitle>
             </ion-card-header>
             <ion-card-content>
               <p><strong>Dirección:</strong> {{ emprendimiento.direccion }}</p>
-              <p><strong>Creado por:</strong> {{ emprendimiento.creador }}</p>
             </ion-card-content>
           </ion-card>
         </ion-col>

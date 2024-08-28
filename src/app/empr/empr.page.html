@@ -1,30 +1,61 @@
 <ion-header>
-    <ion-toolbar>
-      <img src="../../assets/img/miemlogo.png" alt="" class="toolbar-logo">
-    </ion-toolbar>    
-  </ion-header>
-  <ion-content class="ion-padding">
-    <form (ngSubmit)="guardarEmprendimiento()">
-      <ion-item>
-        <ion-label position="floating">Nombre del emprendimiento</ion-label>
-        <ion-input [(ngModel)]="emprendimiento.nombre" name="nombre" required></ion-input>
-      </ion-item>
-      
-      <ion-item>
-        <ion-label>Tipo de emprendimiento</ion-label>
-        <ion-select [(ngModel)]="emprendimiento.tipo" name="tipo" required>
-          <ion-select-option value="barberia">Barbería</ion-select-option>
-          <ion-select-option value="restaurante">Restaurante</ion-select-option>
-          <ion-select-option value="bazar">Bazar</ion-select-option>
-          <!-- Puedes agregar más opciones aquí -->
-        </ion-select>
-      </ion-item>
-      
-      <ion-item>
-        <ion-label position="floating">Dirección</ion-label>
-        <ion-input [(ngModel)]="emprendimiento.direccion" name="direccion" required></ion-input>
-      </ion-item>
-      
-      <ion-button expand="block" type="submit" [disabled]="!formularioValido()">Guardar</ion-button>
-    </form>
-  </ion-content>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <img src="../../assets/img/miemlogo.png" alt="" class="toolbar-logo">
+  </ion-toolbar>    
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Nuevo Emprendimiento</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form (ngSubmit)="guardarEmprendimiento()">
+        <ion-item>
+          <ion-label position="floating" class="floating-label">Nombre del emprendimiento</ion-label>
+          <ion-input [(ngModel)]="emprendimiento.nombre" name="nombre" required></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="floating" class="floating-label">Tipo de emprendimiento</ion-label>
+          <ion-select [(ngModel)]="emprendimiento.tipo" name="tipo" required>
+            <ion-select-option value="barberia">Barbería</ion-select-option>
+            <ion-select-option value="restaurante">Restaurante</ion-select-option>
+            <ion-select-option value="carniceria">Carnicería</ion-select-option>
+            <ion-select-option value="paqueteria">Paquetería</ion-select-option>
+            <ion-select-option value="cyber">Cyber</ion-select-option>
+            <ion-select-option value="bazar">Bazar</ion-select-option>
+            <ion-select-option value="panaderia">Panadería</ion-select-option>
+            <ion-select-option value="libreria">Librería</ion-select-option>
+            <ion-select-option value="ferreteria">Ferretería</ion-select-option>
+            <ion-select-option value="tiendaRopa">Tienda de Ropa</ion-select-option>
+            <ion-select-option value="joyeria">Joyería</ion-select-option>
+            <ion-select-option value="peluqueria">Peluquería</ion-select-option>
+            <ion-select-option value="cafeteria">Cafetería</ion-select-option>
+            <ion-select-option value="pasteleria">Pastelería</ion-select-option>
+            <ion-select-option value="electrodomesticos">Electrodomésticos</ion-select-option>
+            <ion-select-option value="muebleria">Mueblería</ion-select-option>
+            <ion-select-option value="farmacia">Farmacia</ion-select-option>
+            <ion-select-option value="tiendaMascotas">Tienda de Mascotas</ion-select-option>
+            <ion-select-option value="tiendaDeDeportes">Tienda de Deportes</ion-select-option>
+            <ion-select-option value="optica">Óptica</ion-select-option>
+            <ion-select-option value="tiendaElectronica">Tienda Electrónica</ion-select-option>
+            <ion-select-option value="repuestosAutomotriz">Repuestos Automotriz</ion-select-option>
+            
+
+          </ion-select>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="floating" class="floating-label">Dirección</ion-label>
+          <ion-input [(ngModel)]="emprendimiento.direccion" name="direccion" required></ion-input>
+        </ion-item>
+        
+        <ion-button expand="block" type="submit" [disabled]="!formularioValido()">Guardar</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
