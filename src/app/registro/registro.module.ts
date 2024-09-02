@@ -9,7 +9,7 @@ import { RegistroPage } from './registro.page';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,  // Añade esta línea
+    ReactiveFormsModule, 
     IonicModule,
     RegistroPageRoutingModule
   ],

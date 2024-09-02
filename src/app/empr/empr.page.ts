@@ -21,7 +21,6 @@ export class emprPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    // Cargar el nombre del usuario al inicializar el componente
     const usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
     this.emprendimiento.creador = usuario.nombre || 'Usuario desconocido';
   }
@@ -41,7 +40,6 @@ export class emprPage implements OnInit {
       await this.mostrarMensaje('Emprendimiento guardado con éxito');
       this.limpiarFormulario();
       
-      // Navegar a la página de inicio
       this.router.navigate(['/inicio']);
     } else {
       this.mostrarMensaje('Por favor, complete todos los campos');
